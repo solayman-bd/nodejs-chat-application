@@ -1,4 +1,8 @@
-const getInbox = (req, res, next) => {
+// get inbox page
+function getInbox(req, res, next) {
   res.render("inbox");
+}
+
+module.exports = {
+  getInbox,
 };
-module.exports = { getInbox };
