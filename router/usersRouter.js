@@ -24,7 +24,7 @@ router.get(
   "/",
   decorateHtmlResponse("Users"),
   checkLogin,
-  requireRole(["admin"]),
+  // requireRole(["admin"]),
   getUsers
 );
 
@@ -32,7 +32,7 @@ router.get(
 router.post(
   "/",
   checkLogin,
-  requireRole(["admin"]),
+  // requireRole(["admin"]),
   avatarUpload,
   addUserValidators,
   addUserValidationHandler,
