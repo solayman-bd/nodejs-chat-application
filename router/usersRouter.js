@@ -20,25 +20,36 @@ const { checkLogin, requireRole } = require("../middlewares/common/checkLogin");
 const router = express.Router();
 
 // users page
+// router.get(
+//   "/",
+//   decorateHtmlResponse("Users"),
+//   checkLogin,
+//   requireRole(["admin"]),
+//   getUsers
+// );
 router.get(
   "/",
   decorateHtmlResponse("Users"),
-  // checkLogin,
-  // requireRole(["admin"]),
+
   getUsers
 );
-
 // add user
+// router.post(
+//   "/",
+//   checkLogin,
+//   requireRole(["admin"]),
+//   avatarUpload,
+//   addUserValidators,
+//   addUserValidationHandler,
+//   addUser
+// );
 router.post(
   "/",
-  // checkLogin,
-  // requireRole(["admin"]),
   avatarUpload,
   addUserValidators,
   addUserValidationHandler,
   addUser
 );
-
 // remove user
 router.delete("/:id", checkLogin, requireRole(["admin"]), removeUser);
 
