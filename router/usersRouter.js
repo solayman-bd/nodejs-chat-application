@@ -23,16 +23,16 @@ const router = express.Router();
 router.get(
   "/",
   decorateHtmlResponse("Users"),
-  // checkLogin,
-  // requireRole(["admin"]),
+  checkLogin,
+  requireRole(["admin"]),
   getUsers
 );
 
 // add user
 router.post(
   "/",
-  // checkLogin,
-  // requireRole(["admin"]),
+  checkLogin,
+  requireRole(["admin"]),
   avatarUpload,
   addUserValidators,
   addUserValidationHandler,
@@ -40,7 +40,6 @@ router.post(
 );
 
 // remove user
-// router.delete("/:id", checkLogin, requireRole(["admin"]), removeUser);
-router.delete("/:id", removeUser);
+router.delete("/:id", checkLogin, requireRole(["admin"]), removeUser);
 
 module.exports = router;
