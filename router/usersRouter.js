@@ -23,7 +23,7 @@ const router = express.Router();
 router.get(
   "/",
   decorateHtmlResponse("Users"),
-  checkLogin,
+  // checkLogin,
   // requireRole(["admin"]),
   getUsers
 );
@@ -31,7 +31,7 @@ router.get(
 // add user
 router.post(
   "/",
-  checkLogin,
+  // checkLogin,
   // requireRole(["admin"]),
   avatarUpload,
   addUserValidators,
@@ -40,6 +40,7 @@ router.post(
 );
 
 // remove user
-router.delete("/:id", checkLogin, requireRole(["admin"]), removeUser);
+// router.delete("/:id", checkLogin, requireRole(["admin"]), removeUser);
+router.delete("/:id", removeUser);
 
 module.exports = router;
