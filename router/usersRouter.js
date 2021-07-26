@@ -23,16 +23,16 @@ const router = express.Router();
 router.get(
   "/",
   decorateHtmlResponse("Users"),
-  checkLogin,
-  requireRole(["admin"]),
+  // checkLogin,
+  // requireRole(["admin"]),
   getUsers
 );
 
 // add user
 router.post(
   "/",
-  checkLogin,
-  requireRole(["admin"]),
+  // checkLogin,
+  // requireRole(["admin"]),
   avatarUpload,
   addUserValidators,
   addUserValidationHandler,
